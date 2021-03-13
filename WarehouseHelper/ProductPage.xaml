@@ -1,0 +1,97 @@
+﻿<Page x:Class="WarehouseHelper.ProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WarehouseHelper"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductPage">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <GridSplitter Grid.Column="1" ShowsPreview="False" Width="4" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <ListBox Grid.Row="0" Name="productList" HorizontalContentAlignment="Stretch" SelectionChanged="ProductList_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <Label FontSize="18px" Content="{Binding Path=Name}"></Label>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>#</Label>
+                                    <Label Content="{Binding Path=Id}"></Label>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                <Label Grid.Column="1">Count:</Label>
+                                <Label Grid.Column="1" Content="{Binding Path=Count}"></Label>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Button Name="btnAddProduct" Grid.Row="1" Height="30" HorizontalAlignment="Right" Width="130" Margin="5" Click="BtnAddProduct_Click">Add product</Button>
+        </Grid>
+
+        <Grid Name="detailedInfoWindow" Grid.Column="2" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+                <StackPanel >
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Name:</Label>
+                        <Label Content="{Binding Path=Name}"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label>#</Label>
+                        <Label Content="{Binding Path=Id}"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Count:</Label>
+                        <Label Content="{Binding Path=Count}"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Max count:</Label>
+                        <Label Content="{Binding Path=MaxCount}"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <Label>Description:</Label>
+                        <TextBlock TextWrapping="Wrap" TextAlignment="Justify" Margin="5 0" Text="{Binding Path=Description}"/>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+
+            <Button Name="btnRemoveProduct" Grid.Row="1" Height="30" HorizontalAlignment="Right" Width="130" Margin="5" Click="BtnRemoveProduct_Click">Remove product</Button>
+        </Grid>
+
+    </Grid>
+</Page>

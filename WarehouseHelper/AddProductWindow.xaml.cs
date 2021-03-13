@@ -1,7 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,22 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WarehouseHelper
 {
-    public partial class MainWindow : Window
+    public partial class AddProductWindow : Window
     {
-        public static ApplicationContext DB { get; private set; }
-
-        public MainWindow()
+        public AddProductWindow()
         {
             InitializeComponent();
+        }
 
-            frame.Navigate(new MainPage());
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            // input data validation here
+            // ...
 
-            DB = new ApplicationContext();
+            DialogResult = true;
+        }
+
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
     }
 }

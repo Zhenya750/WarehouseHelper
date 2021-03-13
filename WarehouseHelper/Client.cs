@@ -44,6 +44,8 @@ namespace WarehouseHelper
 
         public int MaxCount { get; set; }
 
+        public string Description { get; set; }
+
         public List<Shipment> Shipments { get; set; }
     }
     

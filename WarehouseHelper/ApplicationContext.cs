@@ -35,9 +35,36 @@ namespace WarehouseHelper
         {
             var products = new Product[]
             {
-                new Product { Id = 1, Name = "HP Pavilion", Count = 5, MaxCount = 10 },
-                new Product { Id = 2, Name = "Mac", Count = 7, MaxCount = 15 },
-                new Product { Id = 3, Name = "Lenovo notebook", Count = 24, MaxCount = 30 },
+                new Product
+                {
+                    Id = 1,
+                    Name = "HP Pavilion",
+                    Count = 5, MaxCount = 10,
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+                    "do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad min" +
+                    "im veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea co" +
+                    "mmodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit es" +
+                    "se cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat " +
+                    "non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                },
+
+                new Product
+                {
+                    Id = 2,
+                    Name = "Lenovo",
+                    Count = 1, MaxCount = 15,
+                    Description = "Fermentum et sollicitudin ac orci phasellus. Viverra accumsan in" +
+                    " nisl nisi scelerisque eu ultrices. Elementum facilisis leo vel fringilla. A i" +
+                    "aculis at erat pellentesque adipiscing. Quam vulputate dignissim suspendisse i" +
+                    "n est ante in nibh."
+                },
+
+                new Product
+                {
+                    Id = 3,
+                    Name = "Acer notebook",
+                    Count = 0, MaxCount = 25
+                },
             };
 
             modelBuilder.Entity<Product>().HasData(products);
