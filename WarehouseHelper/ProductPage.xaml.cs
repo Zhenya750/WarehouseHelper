@@ -46,6 +46,7 @@ namespace WarehouseHelper
             //}
         }
 
+
         private void ProductList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.AddedItems.Count <= 0 ||
@@ -61,6 +62,7 @@ namespace WarehouseHelper
             DataContext = e.AddedItems[0] as Product;
         }
 
+
         private void BtnRemoveProduct_Click(object sender, RoutedEventArgs e)
         {
             var product = DataContext as Product;
@@ -73,6 +75,7 @@ namespace WarehouseHelper
                 MainWindow.DB.SaveChanges();
             }
         }
+
 
         private void BtnAddProduct_Click(object sender, RoutedEventArgs e)
         {
