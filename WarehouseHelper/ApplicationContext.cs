@@ -13,7 +13,9 @@ namespace WarehouseHelper
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Shipment> Shipments { get; set; }
+        public DbSet<Loading> Loadings { get; set; }
 
 
         public ApplicationContext()

@@ -116,6 +116,8 @@ namespace WarehouseHelper
 
                     MainWindow.DB.SaveChanges();
 
+                    // 'reset' the same object in observable collection
+                    // to make it update
                     int index = Products.IndexOf(product);
                     Products.Insert(index, product);
                     Products.RemoveAt(index + 1);

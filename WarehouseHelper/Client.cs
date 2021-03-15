@@ -29,6 +29,8 @@ namespace WarehouseHelper
         [Required]
         [MaxLength(128)]
         public string Name { get; set; }
+
+        public List<Loading> Loadings { get; set; }
     }
 
 
