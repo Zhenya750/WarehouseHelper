@@ -14,14 +14,24 @@ using System.Windows.Shapes;
 
 namespace WarehouseHelper
 {
-    public partial class AddProductWindow : Window
+    public partial class ProductDescriptionWindow : Window
     {
-        public AddProductWindow()
+        public ProductDescriptionWindow()
         {
             InitializeComponent();
         }
 
-        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        public ProductDescriptionWindow(Product product)
+        {
+            InitializeComponent();
+
+            txtName.Text = product.Name;
+            txtCount.Text = product.Count.ToString();
+            txtMaxCount.Text = product.MaxCount.ToString();
+            txtDescription.Text = product.Description;
+        }
+
+        private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
             // input data validation here
             // ...

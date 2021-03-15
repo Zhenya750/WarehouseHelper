@@ -79,7 +79,7 @@ namespace WarehouseHelper
 
         private void BtnAddProduct_Click(object sender, RoutedEventArgs e)
         {
-            var addProductWindow = new AddProductWindow();
+            var addProductWindow = new ProductDescriptionWindow();
 
             if (addProductWindow.ShowDialog() == true)
             {
@@ -95,6 +95,33 @@ namespace WarehouseHelper
                 MainWindow.DB.SaveChanges();
 
                 Products.Add(product);
+            }
+        }
+
+
+        private void BtnEditProduct_Click(object sender, RoutedEventArgs e)
+        {
+            var product = DataContext as Product;
+
+            if (product is Product)
+            {
+                var editProductWindow = new ProductDescriptionWindow(product);
+
+                if (editProductWindow.ShowDialog() == true)
+                {
+                    product.Name = editProductWindow.txtName.Text;
+                    product.Count = int.Parse(editProductWindow.txtCount.Text);
+                    product.MaxCount = int.Parse(editProductWindow.txtMaxCount.Text);
+                    product.Description = editProductWindow.txtDescription.Text;
+
+                    MainWindow.DB.SaveChanges();
+
+                    int index = Products.IndexOf(product);
+                    Products.Insert(index, product);
+                    Products.RemoveAt(index + 1);
+
+                    productList.SelectedItem = product;
+                }
             }
         }
     }
