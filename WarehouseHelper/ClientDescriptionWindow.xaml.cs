@@ -14,20 +14,31 @@ using System.Windows.Shapes;
 
 namespace WarehouseHelper
 {
-    public partial class AddClientWindow : Window
+    public partial class ClientDescriptionWindow : Window
     {
-        public AddClientWindow()
+        public ClientDescriptionWindow()
         {
             InitializeComponent();
         }
 
-        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+
+        public ClientDescriptionWindow(Client client)
+        {
+            InitializeComponent();
+
+            txtName.Text = client.Name;
+            txtEmail.Text = client.Email;
+        }
+
+
+        private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
             // validation here
             // ...
 
             DialogResult = true;
         }
+
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {

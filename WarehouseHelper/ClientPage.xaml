@@ -73,7 +73,10 @@
                 </StackPanel>
             </ScrollViewer>
 
-            <Button Name="btnRemoveClient" Grid.Row="1" Height="30" HorizontalAlignment="Right" Width="130" Margin="5" Click="BtnRemoveClient_Click">Remove product</Button>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="btnEditClient" Height="30" HorizontalAlignment="Right" Width="130" Margin="5" Click="BtnEditClient_Click">Edit client</Button>
+                <Button Name="btnRemoveClient" Height="30" HorizontalAlignment="Right" Width="130" Margin="5" Click="BtnRemoveClient_Click">Remove client</Button>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

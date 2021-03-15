@@ -61,7 +61,7 @@ namespace WarehouseHelper
 
         private void BtnAddClient_Click(object sender, RoutedEventArgs e)
         {
-            var addClientWindow = new AddClientWindow();
+            var addClientWindow = new ClientDescriptionWindow();
 
             if (addClientWindow.ShowDialog() == true)
             {
@@ -75,6 +75,31 @@ namespace WarehouseHelper
                 MainWindow.DB.SaveChanges();
 
                 Clients.Add(client);
+            }
+        }
+
+
+        private void BtnEditClient_Click(object sender, RoutedEventArgs e)
+        {
+            var client = DataContext as Client;
+
+            if (client is Client)
+            {
+                var editClientWindow = new ClientDescriptionWindow(client);
+
+                if (editClientWindow.ShowDialog() == true)
+                {
+                    client.Name = editClientWindow.txtName.Text;
+                    client.Email = editClientWindow.txtEmail.Text;
+
+                    MainWindow.DB.SaveChanges();
+
+                    int index = Clients.IndexOf(client);
+                    Clients.Insert(index, client);
+                    Clients.RemoveAt(index + 1);
+
+                    clientList.SelectedItem = client;
+                }
             }
         }
     }

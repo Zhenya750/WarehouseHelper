@@ -1,11 +1,11 @@
-﻿<Window x:Class="WarehouseHelper.AddClientWindow"
+﻿<Window x:Class="WarehouseHelper.ClientDescriptionWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WarehouseHelper"
         mc:Ignorable="d"
-        Title="Add client" MinHeight="125" MinWidth="270" Height="46.411" Width="165.574">
+        Title="Client description" MinHeight="150" MinWidth="270" Height="151.408" Width="290.54">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -25,7 +25,7 @@
         <TextBox Name="txtEmail" Grid.Column="1" Grid.Row="1" Margin="5" VerticalContentAlignment="Center"></TextBox>
 
         <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <Button Name="btnAdd" Width="80" Padding="5" Margin="0 5" Click="BtnAdd_Click">Add</Button>
+            <Button Name="btnOk" Width="80" Padding="5" Margin="0 5" Click="BtnOk_Click">Ok</Button>
             <Button Name="btnCancel" Width="80" Padding="5" Margin="5" Click="BtnCancel_Click">Cancel</Button>
         </StackPanel>
     </Grid>

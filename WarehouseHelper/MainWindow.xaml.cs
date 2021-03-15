@@ -29,5 +29,21 @@ namespace WarehouseHelper
 
             DB = new ApplicationContext();
         }
+
+        private void FillDatabaseByClients(int count)
+        {
+            if (DB is null) return;
+
+            while (count-- > 0)
+            {
+                DB.Clients.Add(new Client
+                {
+                    Name = "Client_" + count,
+                    Email = Name + "@mail.ru"
+                });
+            }
+
+            DB.SaveChanges();
+        }
     }
 }
