@@ -117,8 +117,6 @@ namespace WarehouseHelper
                     shipment.Count = int.Parse(editShipmentWindow.txtCount.Text);
                     shipment.Product.Count -= shipment.Count;
 
-                    MainWindow.DB.SaveChanges();
-
                     // 'reset' the same object in observable collection
                     // to make it update
                     int index = Shipments.IndexOf(shipment);
@@ -127,6 +125,12 @@ namespace WarehouseHelper
 
                     shipmentList.SelectedItem = shipment;
                 }
+                else
+                {
+                    shipment.Product.Count -= shipment.Count;
+                }
+
+                MainWindow.DB.SaveChanges();
             }
         }
     }

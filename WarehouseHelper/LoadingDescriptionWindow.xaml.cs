@@ -87,6 +87,7 @@ namespace WarehouseHelper
 
             return int.TryParse(txtCount.Text, out count) 
                 && count > 0 
+                && count + currentCount >= 0
                 && count + currentCount <= maxCount;
         }
     }

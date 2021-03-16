@@ -76,17 +76,35 @@ namespace WarehouseHelper
         }
 
         
-        private bool IsValid()
+        public bool IsValid()
         {
             if (cbProduct.SelectedItem is Product == false)
                 return false;
 
-            int maxCount = (cbProduct.SelectedItem as Product).Count;
+            int maxCount = (cbProduct.SelectedItem as Product).MaxCount;
+            int currentCount = (cbProduct.SelectedItem as Product).Count;
             int count = 0;
 
-            return int.TryParse(txtCount.Text, out count) 
-                && count > 0 
-                && count <= maxCount;
+            return int.TryParse(txtCount.Text, out count)
+                && count > 0
+                && currentCount - count >= 0
+                && currentCount - count <= maxCount;
+        }
+
+
+        public static bool IsValid(Product p, string txtCount)
+        {
+            if (p is Product == false)
+                return false;
+
+            int maxCount = (p as Product).MaxCount;
+            int currentCount = (p as Product).Count;
+            int count = 0;
+
+            return int.TryParse(txtCount, out count)
+                && count > 0
+                && currentCount - count >= 0
+                && currentCount - count <= maxCount;
         }
     }
 }

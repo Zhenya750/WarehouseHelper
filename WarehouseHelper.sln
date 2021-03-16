@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseHelper", "WarehouseHelper\WarehouseHelper.csproj", "{21F8E86B-A2E3-44B9-9311-846C6D55A444}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseHelper.UnitTests", "WarehouseHelper.UnitTests\WarehouseHelper.UnitTests.csproj", "{C61DFD8A-EC73-48AF-B676-EE97E681A420}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{21F8E86B-A2E3-44B9-9311-846C6D55A444}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21F8E86B-A2E3-44B9-9311-846C6D55A444}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21F8E86B-A2E3-44B9-9311-846C6D55A444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61DFD8A-EC73-48AF-B676-EE97E681A420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61DFD8A-EC73-48AF-B676-EE97E681A420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61DFD8A-EC73-48AF-B676-EE97E681A420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61DFD8A-EC73-48AF-B676-EE97E681A420}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -117,8 +117,6 @@ namespace WarehouseHelper
                     loading.Count = int.Parse(editLoadingWindow.txtCount.Text);
                     loading.Product.Count += loading.Count;
 
-                    MainWindow.DB.SaveChanges();
-
                     // 'reset' the same object in observable collection
                     // to make it update
                     int index = Loadings.IndexOf(loading);
@@ -127,6 +125,12 @@ namespace WarehouseHelper
 
                     loadingList.SelectedItem = loading;
                 }
+                else
+                {
+                    loading.Product.Count += loading.Count;
+                }
+
+                MainWindow.DB.SaveChanges();
             }
         }
     }
