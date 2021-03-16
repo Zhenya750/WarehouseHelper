@@ -43,13 +43,13 @@ namespace WarehouseHelper
 
         private void BtnShipments_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new ShipmentPage());
         }
 
 
         private void BtnLoadings_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new LoadingPage());
         }
     }
 }

@@ -1,0 +1,58 @@
+﻿<Window x:Class="WarehouseHelper.LoadingDescriptionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WarehouseHelper"
+        mc:Ignorable="d"
+        Title="Loading description" MinHeight="235" MinWidth="270" Height="231.77" Width="328.469">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0">Datetime:</Label>
+        <DatePicker Name="dpDatetime" Grid.Column="1" Grid.Row="0" IsDropDownOpen="False" SelectedDateFormat="Short" Margin="5" IsTodayHighlighted="True"/>
+
+        <Label Grid.Column="0" Grid.Row="1">Supplier:</Label>
+        <ComboBox Name="cbSupplier" Grid.Column="1" Grid.Row="1" Margin="5">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Path=Id}"></Label>
+                        <Label Content="{Binding Path=Name}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Label Grid.Column="0" Grid.Row="2">Product:</Label>
+        <ComboBox Name="cbProduct" Grid.Column="1" Grid.Row="2" Margin="5" SelectionChanged="CbProduct_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Path=Id}"></Label>
+                        <Label Content="{Binding Path=Name}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Label Grid.Column="0" Grid.Row="3">Count:</Label>
+        <TextBox Name="txtCount" Grid.Column="1" Grid.Row="3" Margin="5" VerticalContentAlignment="Center" IsEnabled="False" TextChanged="TxtCount_TextChanged"></TextBox>
+
+        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Name="btnOk" Width="80" Padding="5" Margin="0 5" Click="BtnOk_Click">Ok</Button>
+            <Button Name="btnCancel" Width="80" Padding="5" Margin="5" Click="BtnCancel_Click">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>

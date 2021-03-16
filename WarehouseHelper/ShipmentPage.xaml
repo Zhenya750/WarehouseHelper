@@ -1,0 +1,93 @@
+﻿<Page x:Class="WarehouseHelper.ShipmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WarehouseHelper"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShipmentPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <GridSplitter Grid.Column="1" ShowsPreview="False" Width="4" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <ListBox Grid.Row="0" Name="shipmentList" HorizontalContentAlignment="Stretch" SelectionChanged="ShipmentList_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="18px">#</Label>
+                                <Label FontSize="18px" Content="{Binding Path=Id}"></Label>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                <Label Grid.Column="1">Datetime:</Label>
+                                <Label Grid.Column="1" Content="{Binding Path=Datetime}"></Label>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Button Name="btnAddShipment" Grid.Row="1" Height="30" HorizontalAlignment="Right" Width="130" Margin="5" Click="BtnAddShipment_Click">Add shipment</Button>
+        </Grid>
+
+        <Grid Name="detailedInfoWindow" Grid.Column="2" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+                <StackPanel >
+                    <StackPanel Orientation="Horizontal">
+                        <Label>#</Label>
+                        <Label Content="{Binding Path=Id}"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Datetime:</Label>
+                        <Label Content="{Binding Path=Datetime}"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Client:</Label>
+                        <Label Content="{Binding Path=Client.Name}"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Product:</Label>
+                        <Label Content="{Binding Path=Product.Name}"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Count:</Label>
+                        <Label Content="{Binding Path=Count}"></Label>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="btnEditShipment" Height="30" HorizontalAlignment="Right" Width="130" Margin="5" Click="BtnEditShipment_Click">Edit shipment</Button>
+                <Button Name="btnRemoveShipment" Height="30" HorizontalAlignment="Right" Width="130" Margin="5" Click="BtnRemoveShipment_Click">Remove shipment</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

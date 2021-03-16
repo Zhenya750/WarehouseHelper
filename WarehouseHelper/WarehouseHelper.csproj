@@ -147,6 +147,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LoadingDescriptionWindow.xaml.cs">
+      <DependentUpon>LoadingDescriptionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingPage.xaml.cs">
+      <DependentUpon>LoadingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShipmentDescriptionWindow.xaml.cs">
+      <DependentUpon>ShipmentDescriptionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShipmentPage.xaml.cs">
+      <DependentUpon>ShipmentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SupplierDescriptionWindow.xaml.cs">
       <DependentUpon>SupplierDescriptionWindow.xaml</DependentUpon>
     </Compile>
@@ -156,6 +168,14 @@
     <Page Include="ClientDescriptionWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoadingDescriptionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProductDescriptionWindow.xaml">
       <SubType>Designer</SubType>
@@ -196,6 +216,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShipmentDescriptionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShipmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
