@@ -33,8 +33,9 @@ namespace WarehouseHelper
 
         private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
-            // validation here
-            // ...
+            bool isValid = IsNameValid() && IsEmailValid();
+
+            if (isValid == false) return;
 
             DialogResult = true;
         }
@@ -43,6 +44,35 @@ namespace WarehouseHelper
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
+        }
+
+
+        private void TxtName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            IsNameValid();
+        }
+
+
+        private void TxtEmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            IsEmailValid();
+        }
+
+
+        private bool IsNameValid()
+        {
+            return txtName.Rules()
+                .MaxCharacters(128)
+                .MinCharacters(1)
+                .Validate();
+        }
+
+
+        private bool IsEmailValid()
+        {
+            return txtEmail.Rules()
+                .MaxCharacters(128)
+                .Validate();
         }
     }
 }

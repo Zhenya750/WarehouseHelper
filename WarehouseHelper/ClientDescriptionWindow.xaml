@@ -19,10 +19,10 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Column="0" Grid.Row="0">Name:</Label>
-        <TextBox Name="txtName" Grid.Column="1" Grid.Row="0" Margin="5" VerticalContentAlignment="Center"></TextBox>
+        <TextBox Name="txtName" Grid.Column="1" Grid.Row="0" Margin="5" VerticalContentAlignment="Center" TextChanged="TxtName_TextChanged"></TextBox>
 
         <Label Grid.Column="0" Grid.Row="1">Email:</Label>
-        <TextBox Name="txtEmail" Grid.Column="1" Grid.Row="1" Margin="5" VerticalContentAlignment="Center"></TextBox>
+        <TextBox Name="txtEmail" Grid.Column="1" Grid.Row="1" Margin="5" VerticalContentAlignment="Center" TextChanged="TxtEmail_TextChanged"></TextBox>
 
         <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
             <Button Name="btnOk" Width="80" Padding="5" Margin="0 5" Click="BtnOk_Click">Ok</Button>

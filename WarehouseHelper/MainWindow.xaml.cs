@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WarehouseHelper.ContentGenerators;
 
 namespace WarehouseHelper
 {
@@ -28,21 +29,14 @@ namespace WarehouseHelper
             frame.Navigate(new MainPage());
 
             DB = new ApplicationContext();
+
+            //FillDataBaseByClients(new DBContentGenerator(), 10);
         }
 
-        private void FillDatabaseByClients(int count)
+
+        private static void FillDataBaseByClients(IDBContentGenerator generator, int count)
         {
-            if (DB is null) return;
-
-            while (count-- > 0)
-            {
-                DB.Clients.Add(new Client
-                {
-                    Name = "Client_" + count,
-                    Email = Name + "@mail.ru"
-                });
-            }
-
+            DB.Clients.AddRange(generator.GenerateClients(count));
             DB.SaveChanges();
         }
     }

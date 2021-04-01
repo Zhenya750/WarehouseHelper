@@ -147,6 +147,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ContentGenerators\DBContentGenerator.cs" />
+    <Compile Include="ContentGenerators\IDBContentGenerator.cs" />
     <Compile Include="LoadingDescriptionWindow.xaml.cs">
       <DependentUpon>LoadingDescriptionWindow.xaml</DependentUpon>
     </Compile>
@@ -165,6 +167,7 @@
     <Compile Include="SupplierPage.xaml.cs">
       <DependentUpon>SupplierPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Validator.cs" />
     <Page Include="ClientDescriptionWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -266,5 +269,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
