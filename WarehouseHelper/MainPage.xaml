@@ -22,5 +22,9 @@
             <Button Name="btnShipments" Content="Shipments" Margin="5 0" Padding="5" Click="BtnShipments_Click"/>
             <Button Name="btnLoadings" Content="Loadings" Margin="5" Padding="5" Click="BtnLoadings_Click"/>
         </StackPanel>
+
+        <StackPanel Grid.Column="0" Width="120" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Button Name="btnReport" Content="Get report" Margin="5" Padding="5" Click="BtnReport_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

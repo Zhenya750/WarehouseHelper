@@ -29,8 +29,6 @@ namespace WarehouseHelper
             frame.Navigate(new MainPage());
 
             DB = new ApplicationContext();
-
-            //FillDataBaseByClients(new DBContentGenerator(), 10);
         }
 
 

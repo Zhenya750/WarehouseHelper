@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WarehouseHelper.Reports;
 
 namespace WarehouseHelper
 {
-    public class Client
+    public class Client : IVisitable
     {
         public int Id { get; set; }
 
@@ -19,10 +20,16 @@ namespace WarehouseHelper
         public string Email { get; set; }
 
         public List<Shipment> Shipments { get; set; }
+
+
+        public void Accept(IVisitor visitor)
+        {
+            visitor.VisitClient(this);
+        }
     }
 
 
-    public class Supplier
+    public class Supplier : IVisitable
     {
         public int Id { get; set; }
 
@@ -31,6 +38,12 @@ namespace WarehouseHelper
         public string Name { get; set; }
 
         public List<Loading> Loadings { get; set; }
+
+
+        public void Accept(IVisitor visitor)
+        {
+            visitor.VisitSupplier(this);
+        }
     }
 
 

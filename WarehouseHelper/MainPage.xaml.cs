@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WarehouseHelper.Reports;
 
 namespace WarehouseHelper
 {
@@ -50,6 +51,22 @@ namespace WarehouseHelper
         private void BtnLoadings_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new LoadingPage());
+        }
+
+
+        private void BtnReport_Click(object sender, RoutedEventArgs e)
+        {
+            CreateReport(MainWindow.DB.Clients);
+            CreateReport(MainWindow.DB.Suppliers);
+        }
+
+
+        private void CreateReport(IEnumerable<IVisitable> visitables)
+        {
+            var visitor = new TextExportVisitor();
+
+            foreach (var visitable in visitables)
+                visitable.Accept(visitor);
         }
     }
 }

@@ -155,6 +155,9 @@
     <Compile Include="LoadingPage.xaml.cs">
       <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Reports\IVisitable.cs" />
+    <Compile Include="Reports\IVisitor.cs" />
+    <Compile Include="Reports\TextExportVisitor.cs" />
     <Compile Include="ShipmentDescriptionWindow.xaml.cs">
       <DependentUpon>ShipmentDescriptionWindow.xaml</DependentUpon>
     </Compile>
