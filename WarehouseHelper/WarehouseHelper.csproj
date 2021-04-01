@@ -149,6 +149,8 @@
     </ApplicationDefinition>
     <Compile Include="ContentGenerators\DBContentGenerator.cs" />
     <Compile Include="ContentGenerators\IDBContentGenerator.cs" />
+    <Compile Include="ContentGenerators\ProxyContentGenerator.cs" />
+    <Compile Include="EntityBuilders\ProductBuilder.cs" />
     <Compile Include="LoadingDescriptionWindow.xaml.cs">
       <DependentUpon>LoadingDescriptionWindow.xaml</DependentUpon>
     </Compile>
@@ -210,7 +212,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ApplicationContext.cs" />
-    <Compile Include="Client.cs" />
+    <Compile Include="Entities.cs" />
     <Compile Include="ClientPage.xaml.cs">
       <DependentUpon>ClientPage.xaml</DependentUpon>
     </Compile>

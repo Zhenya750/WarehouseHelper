@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WarehouseHelper.EntityBuilders;
 using WarehouseHelper.Reports;
 
 namespace WarehouseHelper
@@ -62,6 +63,12 @@ namespace WarehouseHelper
         public string Description { get; set; }
 
         public List<Shipment> Shipments { get; set; }
+
+
+        public static ProductBuilder CreateBuilder()
+        {
+            return new ProductBuilder();
+        }
     }
     
 

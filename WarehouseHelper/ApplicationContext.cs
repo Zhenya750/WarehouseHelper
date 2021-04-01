@@ -17,7 +17,7 @@ namespace WarehouseHelper
         public DbSet<Shipment> Shipments { get; set; }
         public DbSet<Loading> Loadings { get; set; }
 
-
+        
         public ApplicationContext()
         {
             //Database.EnsureDeleted();

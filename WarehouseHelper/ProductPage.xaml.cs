@@ -28,22 +28,6 @@ namespace WarehouseHelper
             Products = new ObservableCollection<Product>(MainWindow.DB.Products);
 
             productList.ItemsSource = Products;
-
-            //using (var db = new ApplicationContext())
-            //{
-            //    var ss = db.Shipments
-            //        .Include(shipment => shipment.Client)
-            //        .Include(shipment => shipment.Product)
-            //        .ToList();
-
-            //    foreach (var s in ss)
-            //    {
-            //        Console.WriteLine($"#{s.Id}:");
-            //        Console.WriteLine($"\tClient: {s.Client.Name} {s.Client.Email}");
-            //        Console.WriteLine($"\tProduct: {s.Product.Name} {s.Product.Count}");
-            //        Console.WriteLine();
-            //    }
-            //}
         }
 
 
@@ -79,17 +63,16 @@ namespace WarehouseHelper
 
         private void BtnAddProduct_Click(object sender, RoutedEventArgs e)
         {
-            var addProductWindow = new ProductDescriptionWindow();
+            var window = new ProductDescriptionWindow();
 
-            if (addProductWindow.ShowDialog() == true)
+            if (window.ShowDialog() == true)
             {
-                var product = new Product
-                {
-                    Name = addProductWindow.txtName.Text,
-                    Count = int.Parse(addProductWindow.txtCount.Text),
-                    MaxCount = int.Parse(addProductWindow.txtMaxCount.Text),
-                    Description = addProductWindow.txtDescription.Text
-                };
+                var product = Product.CreateBuilder()
+                    .SetName(window.txtName.Text)
+                    .SetCount(int.Parse(window.txtCount.Text))
+                    .SetMaxCount(int.Parse(window.txtMaxCount.Text))
+                    .SetDescription(window.txtDescription.Text)
+                    .Build();
 
                 MainWindow.DB.Products.Add(product);
                 MainWindow.DB.SaveChanges();

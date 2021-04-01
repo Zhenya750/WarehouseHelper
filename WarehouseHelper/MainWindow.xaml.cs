@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WarehouseHelper.ContentGenerators;
 
+
 namespace WarehouseHelper
 {
     public partial class MainWindow : Window
@@ -29,6 +30,8 @@ namespace WarehouseHelper
             frame.Navigate(new MainPage());
 
             DB = new ApplicationContext();
+
+            //FillDataBaseByClients(new ProxyGeneratorLogger(new DBContentGenerator()), 5);
         }
 
 
