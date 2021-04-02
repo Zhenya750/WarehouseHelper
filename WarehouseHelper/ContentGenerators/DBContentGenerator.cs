@@ -8,17 +8,14 @@ namespace WarehouseHelper.ContentGenerators
 {
     public class DBContentGenerator : IDBContentGenerator
     {
-        private string[] _names =
-        {
-            "John", "Mike", "Michael", "Jason", "Eugene",
-            "Alex", "Leo", "Mark", "Matt", "Bill", "Simon"
-        };
+        private IGenerateNameStrategy _strategy;
 
         private Random _random;
 
         
-        public DBContentGenerator()
+        public DBContentGenerator(IGenerateNameStrategy strategy)
         {
+            _strategy = strategy;
             _random = new Random();
         }
 
@@ -29,18 +26,12 @@ namespace WarehouseHelper.ContentGenerators
             {
                 var client = new Client
                 {
-                    Name = GenerateName(),
+                    Name = _strategy.Generate(),
                     Email = GenerateEmail(),
                 };
 
                 yield return client;
             }
-        }
-
-
-        private string GenerateName()
-        {
-            return _names[_random.Next() % _names.Length];
         }
 
 
@@ -51,24 +42,10 @@ namespace WarehouseHelper.ContentGenerators
             int count = _random.Next(5, 20);
 
             var sb = new StringBuilder();
-
-            while (count-- > 0)
-            {
-                sb.Append(GetRandomLetter());
-            }
-
+            sb.Append("email");
             sb.Append('@');
 
             return sb.Append(ends[_random.Next() % ends.Length]).ToString();
-        }
-
-
-        private char GetRandomLetter()
-        {
-            string chars = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-            int num = _random.Next() % chars.Length;
-            return chars[num];
         }
     }
 }

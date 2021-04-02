@@ -149,7 +149,9 @@
     </ApplicationDefinition>
     <Compile Include="ContentGenerators\DBContentGenerator.cs" />
     <Compile Include="ContentGenerators\IDBContentGenerator.cs" />
+    <Compile Include="ContentGenerators\IGenerateNameStrategy.cs" />
     <Compile Include="ContentGenerators\ProxyContentGenerator.cs" />
+    <Compile Include="ContentGenerators\RandomNameGenerator.cs" />
     <Compile Include="EntityBuilders\ProductBuilder.cs" />
     <Compile Include="LoadingDescriptionWindow.xaml.cs">
       <DependentUpon>LoadingDescriptionWindow.xaml</DependentUpon>
