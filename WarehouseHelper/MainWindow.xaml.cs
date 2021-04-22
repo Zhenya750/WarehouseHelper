@@ -31,11 +31,10 @@ namespace WarehouseHelper
 
             DB = new ApplicationContext();
 
-
-            var nameGenerator = new RandomNameGenerator();
-            var dbContentGenerator = new DBContentGenerator(nameGenerator);
-            var proxyLogger = new ProxyGeneratorLogger(dbContentGenerator);
-            FillDataBaseByClients(proxyLogger, 5);
+            //var nameGenerator = new RandomNameGenerator();
+            //var dbContentGenerator = new DBContentGenerator(nameGenerator);
+            //var proxyLogger = new ProxyGeneratorLogger(dbContentGenerator);
+            //FillDataBaseByClients(proxyLogger, 5);
         }
 
 
