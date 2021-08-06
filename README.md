@@ -7,7 +7,7 @@ WarehouseHelper is a simple accounting program with following entities:
 4) Loading stores information about supplier, product, count of products and date
 
 Main page looks like this:
-<img src="screenshots/Main.png" width="100%">
+<img src="Screenshots/Main.png" width="100%">
 
 Other pages are a bit similar in functionality:
-<img src="screenshots/Product.png" width="100%">
+<img src="Screenshots/Product.png" width="100%">
